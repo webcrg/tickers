@@ -25,8 +25,23 @@
   transform: scale(0.5);
   transition: 0.4s all;
   width: fit-content;
+  min-width: 350px;
 }
 
 .contentActive {
   transform: scale(1);
+}
+
+.closeButton {
+  display: block;
+  margin-left: auto;
+  background-color: transparent;
+  padding: 5px 20px;
+  border-radius: 3px;
+  border: 1px solid #888;
+  font-size: 14px;
+}
+
+.closeButton:hover {
+  background-color: #fafafa;
 }

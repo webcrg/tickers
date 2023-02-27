@@ -16,25 +16,24 @@ function Modal({ active, children, hideModal }: IModalProps) {
     [styles.contentActive]: active,
   });
 
-  const handleBackgroundClick = () => {
-    hideModal();
-  };
-
   const handleContentClick = (e: React.SyntheticEvent) => {
     e.stopPropagation();
   };
 
   return (
-    <div
-      className={modalStyles}
-      onClick={handleBackgroundClick}
-      role="presentation"
-    >
+    <div className={modalStyles} onClick={hideModal} role="presentation">
       <div
         className={contentStyles}
         onClick={handleContentClick}
         role="presentation"
       >
+        <button
+          type="button"
+          className={styles.closeButton}
+          onClick={hideModal}
+        >
+          закрыть
+        </button>
         {children}
       </div>
     </div>
