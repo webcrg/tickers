@@ -2,4 +2,4 @@
 npm i <br>
 npx vite
 
-демо:
+демо: https://webcrg.github.io/tickers
