@@ -1,3 +1,16 @@
+.tableHead {
+  text-align: left;
+}
+
+.tableHeadCell {
+  padding: 10px;
+}
+
+.tableCell {
+  border: 1px solid #928f8f;
+  padding: 10px;
+}
+
 .clickableRow {
   cursor: pointer;
 }

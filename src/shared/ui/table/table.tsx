@@ -31,10 +31,12 @@ export function Table({
 
   return (
     <table>
-      <thead>
+      <thead className={styles.tableHead}>
         <tr>
           {columns.map((column) => (
-            <th key={column.key}>{column.label}</th>
+            <th className={styles.tableHeadCell} key={column.key}>
+              {column.label}
+            </th>
           ))}
         </tr>
       </thead>
@@ -48,7 +50,9 @@ export function Table({
             key={nanoid()}
           >
             {columns.map((column) => (
-              <td key={column.key}>{row[column.key]}</td>
+              <td className={styles.tableCell} key={column.key}>
+                {row[column.key]}
+              </td>
             ))}
           </tr>
         ))}
