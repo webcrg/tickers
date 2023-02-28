@@ -1,5 +1,7 @@
+import classNames from 'classnames';
 import { nanoid } from 'nanoid';
 import React from 'react';
+import styles from './table.module.scss';
 
 interface TableProps {
   data: {
@@ -10,12 +12,22 @@ interface TableProps {
     key: string;
   }[];
   rowClickHandler: (arg0: any) => void;
+  clickableRow?: boolean;
 }
 
-export function Table({ data, columns, rowClickHandler }: TableProps) {
+export function Table({
+  data,
+  columns,
+  rowClickHandler,
+  clickableRow,
+}: TableProps) {
   if (!data.length) {
     return null;
   }
+
+  const rowStyles = classNames({
+    [styles.clickableRow]: clickableRow,
+  });
 
   return (
     <table>
@@ -29,6 +41,7 @@ export function Table({ data, columns, rowClickHandler }: TableProps) {
       <tbody>
         {data.map((row, index) => (
           <tr
+            className={rowStyles}
             onClick={() => {
               rowClickHandler(row);
             }}

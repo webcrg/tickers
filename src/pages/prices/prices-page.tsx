@@ -49,6 +49,7 @@ export const PricesPage = observer(() => {
         columns={columns}
         data={tickerData}
         rowClickHandler={rowClickHandler}
+        clickableRow
       />
       <Modal active={modalActive} hideModal={modalCloseHandler}>
         <>
